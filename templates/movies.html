@@ -1,0 +1,75 @@
+<!-- This is the code for the INTERACTIVE WINE SELECTOR DASHBOARD web page -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>MOVIES</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+  <!-- Highchart library JS-->
+  <script src="https://code.highcharts.com/highcharts.js"></script>
+  <script src="https://code.highcharts.com/modules/streamgraph.js"></script>
+  <script src="https://code.highcharts.com/modules/series-label.js"></script>
+  <script src="https://code.highcharts.com/modules/exporting.js"></script>
+  <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+
+
+  <!-- CSS stylesheet -->
+  <link rel="stylesheet" type="text/css" href="../assets/css/styles.css" media="screen">
+
+</head>
+
+<body>
+  <!-- Start of Header -->
+  <header>
+    <div class="col-md-12 jumbotron text-center" style="background-image: url('../assets/images/tv_screens_10.png')">
+      <h1 style="color: white;">What2Watch2Nite</h1>
+      <p style="color: white;">_______________________________________</p>
+      <h2 style="color: white;">Movie Recommendations</h2>
+      <header>
+        <img src="../assets/images/tv_logo_2.png" alt="Logo">
+        <div class=credit> Image by Depositphoto </div>
+      </header>
+  </header>
+  <!-- Start of Navigation -->
+  <nav>
+    <ul>
+      <li><a href="../index.html">PROJECT OVERVIEW</a></li>
+      <li><a href="movies.html">MOVIES</a></li>
+      <li><a href="tv_shows.html">TV SHOWS</a></li>
+      <li><a href="our_team.html">OUR TEAM</a></li>
+      <li><a href="https://github.com/clangstonhinton/grape_choice_project_3">GITHUB REPO</a></li>
+    </ul>
+  </nav>
+  <div class="row text-center">
+    <h2>Use the <span class="highlight2">dropdown menu</span> below to find your next <span
+        class="highlight">What2Watch</span> movie tonight</h2>
+    <hr>
+  </div>
+  <div class="row">
+    <div class="col-md-2">
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <br> <br>
+          <h6 class="panel-title">Favorite Movie</h6>
+          <hr>
+          <!-- Add Type of Type Dropdown Menu-->
+          <select id="dropdownType" onchange="optionChanged(this.value)"></select>
+          <br>
+          <br>
+      
+  
+
+
+  <!-- Footer -->
+  <footer class="footer" style="text-align: center;">
+    <span class="bottom">&copy; Copyright The-Data-Machines 2023</span>
+  </footer>
+
+</body>
+
+</html>
