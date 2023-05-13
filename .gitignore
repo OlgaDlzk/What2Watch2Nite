@@ -1,1 +1,4 @@
 .DS_Store
+
+static/etl/csv/movies_initial.csv
+static/etl/csv/tvs_initial.csv
