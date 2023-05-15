@@ -41,6 +41,8 @@ header img:last-of-type {
   nav {
     background-color: #171597;
     align-items: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
   }
   
   ul {
