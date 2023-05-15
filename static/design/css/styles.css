@@ -273,14 +273,14 @@ header img:last-of-type {
 
 /* Footer */
 footer {
-  background-color: #b8b7b7;
-  border-top-style: solid;
-  border-top-width: 5px;
-  border-top-color: #171597;
+  background-color: #171597;
+  /* border-top-style: solid;
+  border-top-width: 20px; */
+  /* border-top-color: #171597; */
   color: white;
   min-height: 40px;
   font-family: Arial, Geneva, Helvetica, sans-serif;
-  font-size: 12px;
+  font-size: 14px;
   text-align: center;
   position: fixed;
   left: 0;
