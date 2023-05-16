@@ -14,6 +14,7 @@ contourpy==1.0.7
 cycler==0.11.0
 debugpy @ file:///C:/ci_311/debugpy_1676426137692/work
 decorator @ file:///home/conda/feedstock_root/build_artifacts/decorator_1641555617451/work
+docopt==0.6.2
 executing @ file:///home/conda/feedstock_root/build_artifacts/executing_1667317341051/work
 fastjsonschema==2.16.3
 Flask==2.3.2
@@ -60,6 +61,7 @@ pandas==2.0.1
 parso @ file:///home/conda/feedstock_root/build_artifacts/parso_1638334955874/work
 pickleshare @ file:///home/conda/feedstock_root/build_artifacts/pickleshare_1602536217715/work
 Pillow==9.5.0
+pipreqs==0.4.13
 platformdirs @ file:///home/conda/feedstock_root/build_artifacts/platformdirs_1683850015520/work
 plotly==5.14.1
 prompt-toolkit @ file:///home/conda/feedstock_root/build_artifacts/prompt-toolkit_1677600924538/work
@@ -105,4 +107,5 @@ urllib3==1.26.15
 wcwidth @ file:///home/conda/feedstock_root/build_artifacts/wcwidth_1673864653149/work
 Werkzeug==2.3.4
 wrapt==1.14.1
+yarg==0.1.9
 zipp @ file:///home/conda/feedstock_root/build_artifacts/zipp_1677313463193/work
