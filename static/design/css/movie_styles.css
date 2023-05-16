@@ -2,6 +2,8 @@
 nav {
     background-color: #171597;
     align-items: center;
+	padding-top: 10px;
+	padding-bottom: 10px;
   }
   
   ul {
@@ -58,6 +60,15 @@ nav {
     background-position: center;
     height: 50000%;
 }
+
+/* Logo overlay on top of  Background Image */
+header img:last-of-type {
+    height: 150px;
+    width: 225px;
+    position: absolute; /* Set the logo element as absolute positioned */
+    top: 75px; /* Adjust top, right, bottom, left values as needed to position the logo */
+    left: 100px;
+  }
 
 #content {
 
