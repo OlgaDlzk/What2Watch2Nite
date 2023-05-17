@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Movie Recommendations</title>
+</head>
+<body>
+    <h1>Movie Recommendations</h1>
+    <p>Movie: <span id="movie"></span></p>
+    <ul id="recommendations"></ul>
+
+    <script>
+        // Get the movie and recommendations from the JSON data passed from Flask
+        var movie = "{{ data['movie'] }}";
+        var recommendations = {{ data['recommendations'] | tojson }};
+
+        // Display the movie and recommendations on the page
+        document.getElementById("movie").textContent = movie;
+        recommendations.forEach(function (recommendation) {
+            var li = document.createElement("li");
+            li.textContent = recommendation;
+            document.getElementById("recommendations").appendChild(li);
+        });
+    </script>
+</body>
+</html>
