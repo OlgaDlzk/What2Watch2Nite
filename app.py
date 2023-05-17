@@ -4,7 +4,11 @@ import sys
 import subprocess
 import pandas as pd
 #from flask import Flask, redirect
-from flask import Flask, render_template, request, jsonify
+from flask import Flask, render_template, request, jsonify, redirect
+
+#Import Machine Learning file
+from other_python_files import movies_machineLearning
+from other_python_files import tv_machineLearning
 
 app = Flask(__name__)
 
@@ -29,10 +33,40 @@ def ourTeam():
     return render_template('our_team.html')
 
 
+
+
+
+
 # Movie Routes
-@app.route('/movies', methods=['GET'])
+@app.route('/movies', methods=['POST','GET'])
 def movies_page():
     return render_template('movies_2.html', suggestions=get_movie_suggestions())
+
+
+@app.route('/process_data_movies', methods=['POST'])
+def process_data():
+    movie = request.form['movie']
+
+    # Call machineLearning.py passing the movie name
+    result = movies_machineLearning.process_movie(movie)
+
+    # Convert the result to JSON and return it
+    return jsonify(result)
+
+# pass test data from an input field in movies_2.html into a python file named insert_name_here.py using flask. have the python file insert_name_here.py pass the data into a new html file named movie recommendations.html
+@app.route('/movie_recommendations', methods=['POST','GET'])
+def movie_recommendations_page():
+    if request.method == 'POST':
+        movie_name = request.form['movie_name']
+        print(movie_name)
+        #return redirect(url_for('movie_recommendations_page', movie_name=movie_name))
+        return render_template('movie_recommendations.html', movie_name=movie_name)
+    else:
+        return render_template('movie_2.html')
+
+
+
+
 
 
 
@@ -40,6 +74,35 @@ def movies_page():
 @app.route('/tv_shows', methods=['GET'])
 def tv_shows_page():
     return render_template('tv_shows_2.html', suggestions=get_tv_suggestions())
+
+
+@app.route('/process_data_tv', methods=['POST'])
+def process_data_tv():
+    tv_show = request.form['movie']
+
+    # Call machineLearning.py passing the movie name
+    result = tv_machineLearning.process_tv(tv_show)
+
+    # Convert the result to JSON and return it
+    return jsonify(result)
+
+
+@app.route('/tv_recommendations', methods=['POST','GET'])
+def tv_recommendations_page():
+    if request.method == 'POST':
+        tv_show_name = request.form['tv_show_name']
+        print(tv_show_name)
+        #return redirect(url_for('movie_recommendations_page', movie_name=movie_name))
+        return render_template('tv_recommendations.html', tv_show_name=tv_show_name)
+    else:
+        return render_template('tv_shows_2.html')
+
+
+
+
+    
+        
+
 
 
 
