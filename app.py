@@ -5,12 +5,17 @@ import subprocess
 import pandas as pd
 #from flask import Flask, redirect
 from flask import Flask, render_template, request, jsonify, redirect
+import pickle
 
 #Import Machine Learning file
 from other_python_files import movies_machineLearning
 from other_python_files import tv_machineLearning
 
 app = Flask(__name__)
+
+model = pickle.load('static/etl/pkl/tfidf.pkl', 'rb')
+matrix = pickle.load('static/etl/pkl/tfidf_matrix.pkl', 'rb')
+                    
 
 # autocomplete suggestions for search bar - movies
 def get_movie_suggestions():
