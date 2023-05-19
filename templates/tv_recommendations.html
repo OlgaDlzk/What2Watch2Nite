@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>TV Show Recommendations</title>
+</head>
+
+<body>
+    <h1>TV Show Recommendations</h1>
+    <p>TV Show: <span id="tv_show"></span></p>
+    <ul id="recommendations"></ul>
+
+    <script>
+        // Get the TV show and recommendations from the JSON data passed from Flask
+        var tv_show = "{{ data['tv_show'] }}";
+        var recommendations = {{ data['recommendations'] | tojson }};
+
+        // Display the TV show and recommendations on the page
+        document.getElementById("tv_show").textContent = tv_show;
+        recommendations.forEach(function (recommendation) {
+            var li = document.createElement("li");
+            li.textContent = recommendation;
+            document.getElementById("recommendations").appendChild(li);
+        });
+    </script>
+</body>
+
+
+
+</html>

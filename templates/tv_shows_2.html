@@ -29,16 +29,19 @@
 <!-- Start of Navigation -->
 <nav>
   <ul>
-    <li><a href="index.html">PROJECT OVERVIEW</a></li>
-    <li><a href="movies_2.html">MOVIES</a></li>
-    <li><a href="tv_shows_2.html">TV SHOWS</a></li>
-    <li><a href="our_team.html">OUR TEAM</a></li>
+    <li><a href="/">PROJECT OVERVIEW</a></li>
+    <li><a href="/movies">MOVIES</a></li>
+    <li><a href="/tv_shows">TV SHOWS</a></li>
+    <li><a href="/our_team">OUR TEAM</a></li>
     <li><a href="https://github.com/OlgaDlzk/What2Watch2Nite/tree/main">GITHUB REPO</a></li>
   </ul>
 </nav>
 
 <body 
   <div class="background-image">
+    <header>
+      <img src="../static/design/img/tv_logo_2.png" alt="Logo">
+    </header>
     <div class="ml-container" style="display: block;">
       <a href="https://github.com/OlgaDlzk/What2Watch2Nite" target="_blank" class="github-corner" title="View source on GitHub">
             <svg data-toggle="tooltip"
@@ -55,6 +58,7 @@
           </a>
       <center><h1> What2Watch2Nite<h1></center>
       <center><h2> TV Show Recommendation Engine</h2></center>
+<!-- AR's Mess
       <div class="form-group shadow-textarea" style="margin-top: 10px;text-align: center;color: white;">
           <input type="text" name="movie" class="movie form-control" id="autoComplete" autocomplete="off" 
           placeholder="Enter a TV Show " style="background-color: #ffffff;border-color:#3457f1;width: 60%;color: #181818" required="required" />
@@ -67,6 +71,30 @@
       <button class="btn btn-primary btn-block movie-button" style="background-color: #3457f1;text-align: center;border-color: #3457f1;width:120px;" disabled="true" >Enter</button><br><br>
     </div>
 	</div>
+-->
+
+  <form method="POST" action="/process_data_tv">
+    <div class="form-group shadow-textarea" style="margin-top: 10px;text-align: center;color: white;">
+        <input 
+          type="text" 
+          name="movie" 
+          class="movie form-control" 
+          id="autoComplete" 
+          autocomplete="off" 
+          placeholder="Enter a TV Show" 
+          style="background-color: #ffffff;border-color:#3457f1;width: 60%;color: #181818" 
+          required="required" />
+        <br>
+    </div>
+    <div class="form-group" style="text-align: center;">
+        <button class="btn btn-primary btn-block movie-button" style="background-color: #3457f1;text-align: center;border-color: #3457f1;width:120px;">Enter</button>
+        <br><br>
+    </div>
+</form>
+
+
+
+<!-- AR's End of Mess -->
 
   <div id="loader" class="text-center">
   </div>
@@ -84,7 +112,7 @@
 	
 	
 	<script src="https://cdn.jsdelivr.net/npm/@tarekraafat/autocomplete.js@7.2.0/dist/js/autoComplete.min.js"></script>
-  <script type="text/javascript" src="{{url_for('static', filename='autocomplete.js')}}"></script>
+  <script type="text/javascript" src="../static/etl/js/autocomplete.js"></script>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script type="text/javascript" src="{{url_for('static', filename='recommend.js')}}"></script>
