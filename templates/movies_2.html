@@ -20,6 +20,8 @@
   <!-- CSS stylesheet -->
   <link rel="stylesheet" type="text/css" href="../static/design/css/movie_styles.css" media="screen">
 
+  <!--<script src= ../static/etl/js/autocomplete.js></script>-->
+
   <script type="text/javascript">
     var films = {{suggestions|tojson}};
   </script>
@@ -29,10 +31,10 @@
 <!-- Start of Navigation -->
 <nav>
   <ul>
-    <li><a href="index.html">PROJECT OVERVIEW</a></li>
-    <li><a href="movies_2.html">MOVIES</a></li>
-    <li><a href="tv_shows_2.html">TV SHOWS</a></li>
-    <li><a href="our_team.html">OUR TEAM</a></li>
+    <li><a href="/">PROJECT OVERVIEW</a></li>
+    <li><a href="/movies">MOVIES</a></li>
+    <li><a href="/tv_shows">TV SHOWS</a></li>
+    <li><a href="/our_team">OUR TEAM</a></li>
     <li><a href="https://github.com/OlgaDlzk/What2Watch2Nite/tree/main">GITHUB REPO</a></li>
   </ul>
 </nav>
@@ -108,7 +110,7 @@
 	
 	
 	<script src="https://cdn.jsdelivr.net/npm/@tarekraafat/autocomplete.js@7.2.0/dist/js/autoComplete.min.js"></script>
-  <script type="text/javascript" src="{{url_for('static', filename='autocomplete.js')}}"></script>
+  <script type="text/javascript" src="../static/etl/js/autocomplete.js"></script>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script type="text/javascript" src="{{url_for('static', filename='recommend.js')}}"></script>
