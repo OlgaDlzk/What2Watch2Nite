@@ -20,6 +20,8 @@
   <!-- CSS stylesheet -->
   <link rel="stylesheet" type="text/css" href="../static/design/css/movie_styles.css" media="screen">
 
+  <!--<script src= ../static/etl/js/autocomplete.js></script>-->
+
   <script type="text/javascript">
     var films = {{suggestions|tojson}};
   </script>
@@ -108,7 +110,7 @@
 	
 	
 	<script src="https://cdn.jsdelivr.net/npm/@tarekraafat/autocomplete.js@7.2.0/dist/js/autoComplete.min.js"></script>
-  <script type="text/javascript" src="{{url_for('static', filename='autocomplete.js')}}"></script>
+  <script type="text/javascript" src="../static/etl/js/autocomplete.js"></script>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script type="text/javascript" src="{{url_for('static', filename='recommend.js')}}"></script>
