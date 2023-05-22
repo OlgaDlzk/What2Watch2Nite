@@ -73,8 +73,51 @@
     </div>
 	</div>
   </div> -->
+  <script>  
+  function process_response(res) {
+    console.log(res['movies']);
+    console.log(res['num']);
 
-  <form method="POST" action="/process_data_movies">
+    for (let i = 0; i < res['num']; i++) {
+      img_path = 'https://image.tmdb.org/t/p/w500/'+res['movies'][i]['poster_path']
+
+      // var img = document.createElement("img"+i.toString());
+      var img = document.createElement("img");
+      img.src = img_path;
+      img.width = 500;
+      img.height = 700;
+      // img.alt = alt;
+
+      // This next line will just add it to the <body> tag
+      document.body.appendChild(img);
+    }
+
+    // var img = document.createElement("img");
+    // img.src = 'https://image.tmdb.org/t/p/w500//6Wm7P6y22UZA40QuPYHyWyJ6leI.jpg';
+    // img.width = 500;
+    // img.height = 700;
+    // // img.alt = alt;
+
+    // // This next line will just add it to the <body> tag
+    // document.body.appendChild(img);
+  }
+    function fun() {  
+      let text_data= document.getElementById("autoComplete").value;
+        fetch('/process_data_movies', {
+        method: 'POST',
+        headers: {
+          'Accept': 'application.json',
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ movie: text_data }),
+        cache: 'default'
+      }).then(res => res.json())
+      .then(res => {process_response(res)});
+    //   alert(text_data);  
+    }  
+   </script>  
+
+  <!-- <form method="POST" action="/process_data_movies"> -->
     <div class="form-group shadow-textarea" style="margin-top: 10px;text-align: center;color: white;">
         <input type="text" 
           name="movie" 
@@ -86,11 +129,18 @@
           required="required" />
         <br>
     </div>
-    <div class="form-group" style="text-align: center;">
+    <!-- <div class="form-group" style="text-align: center;">
         <button class="btn btn-primary btn-block movie-button" style="background-color: #3457f1;text-align: center;border-color: #3457f1;width:120px;">Enter</button>
         <br><br>
-    </div>
-</form>
+    </div> -->
+<!-- </form> -->
+
+<div class="form-group" style="text-align: center;">
+  <button onclick = "fun()" class="btn btn-primary btn-block movie-button" style="background-color: #3457f1;text-align: center;border-color: #3457f1;width:120px;">Enter2</button>
+  <br><br>
+</div>
+
+
 
 <!-- AR's End of Mess -->
 
@@ -102,11 +152,36 @@
     Please check the spelling or try with other movies!</h3></center>
   </div>
 
-	<div class="results">
+  <div class="container-fluid">
+    <div class="row">
+        <h1 class="text-center"></h1>
+        <hr>
+        <br>
+        {% for movie in predictions_movies %}
+        <div class="col-md-3 text-center">
+            <div class="card text-center" style="width: auto; height: auto;">
+                <img class="card-img-top text-center" id="scale_id" src="https://image.tmdb.org/t/p/w500/{{ movie.poster_path }}">
+                <!-- <div class="card-body text-center">
+                    <h4 class="card-title text-left" style="height: max-content;">{{ hemisphere.title }}</h4> -->
+                <!-- </div> -->
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+
+
+
+
+
+
+
+	<!-- <div class="results">
     <center>
       <h2 id="name" class="text-uppercase"></h2>
     </center>
-	</div>
+	</div> -->
 	
 	
 	<script src="https://cdn.jsdelivr.net/npm/@tarekraafat/autocomplete.js@7.2.0/dist/js/autoComplete.min.js"></script>

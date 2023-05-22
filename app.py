@@ -6,6 +6,9 @@ import pandas as pd
 #from flask import Flask, redirect
 from flask import Flask, render_template, request, jsonify, redirect
 import pickle
+from sklearn.metrics.pairwise import cosine_similarity
+from flask_pymongo import PyMongo
+import json
 
 #Import Machine Learning file
 from other_python_files import movies_machineLearning
@@ -13,8 +16,17 @@ from other_python_files import tv_machineLearning
 
 app = Flask(__name__)
 
-model = pickle.load('static/etl/pkl/tfidf.pkl', 'rb')
-matrix = pickle.load('static/etl/pkl/tfidf_matrix.pkl', 'rb')
+app.config["MONGO_URI"] = "mongodb://localhost:27017/movies_db"
+mongo = PyMongo(app)
+predictions_movies = mongo.db.predictions_movies
+
+# the model
+file = open('static/etl/pkl/tfidf.pkl', 'rb')
+# the matrix
+file_2 = open('static/etl/pkl/tfidf_matrix.pkl', 'rb')
+
+model = pickle.load(file)
+matrix = pickle.load(file_2)
                     
 
 # autocomplete suggestions for search bar - movies
@@ -39,7 +51,7 @@ def ourTeam():
 
 
 
-
+# ----------------------------------------------------------------------------------------------
 
 
 # Movie Routes
@@ -50,13 +62,26 @@ def movies_page():
 
 @app.route('/process_data_movies', methods=['POST'])
 def process_data():
-    movie = request.form['movie']
+    print('--------')
+    print(request)
+    '''
+    When making request from html form, request.form['movie'] works.
+    But when making request from fetch API, it sends body data in bytes. so it needs to be decoded into a string
+    And then can be accessed.
+    '''
+    # movie = request.form['movie']
+    obj = json.loads(request.data.decode('utf-8'))
+    print(obj['movie'])    
+    movie = obj['movie']
 
     # Call machineLearning.py passing the movie name
     result = movies_machineLearning.process_movie(movie)
 
+    # predictions_movies.insert_many({}, result)
+
     # Convert the result to JSON and return it
-    return jsonify(result)
+    # redirect('/movies')
+    return result
 
 # pass test data from an input field in movies_2.html into a python file named insert_name_here.py using flask. have the python file insert_name_here.py pass the data into a new html file named movie recommendations.html
 @app.route('/movie_recommendations', methods=['POST','GET'])
@@ -71,7 +96,7 @@ def movie_recommendations_page():
 
 
 
-
+# ----------------------------------------------------------------------------------------------------------------
 
 
 
