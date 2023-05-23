@@ -31,9 +31,9 @@ With so many viewing and entertainment choices, it can be difficult and frustrat
 - The original data can be found here:  [movie data](https://www.kaggle.com/datasets/akshaypawar7/millions-of-movies) and [tv show data](https://www.kaggle.com/datasets/bourdier/all-tv-series-details-dataset).
 
 - Data Distribution:  both final datasets have normal distributions
-<img width="612" alt="movie histogram" src="https://github.com/OlgaDlzk/What2Watch2Nite/assets/44728723/c4849070-f086-428e-ac97-370bc73667f1">
+<p align="center"> <img width="612" alt="movie histogram" src="https://github.com/OlgaDlzk/What2Watch2Nite/assets/44728723/c4849070-f086-428e-ac97-370bc73667f1">
 
-<img width="612" alt="tv show histogram" src="https://github.com/OlgaDlzk/What2Watch2Nite/assets/44728723/e7aea493-b553-4321-a28b-7dfe7d99913f">
+<p align="center"> <img width="612" alt="tv show histogram" src="https://github.com/OlgaDlzk/What2Watch2Nite/assets/44728723/e7aea493-b553-4321-a28b-7dfe7d99913f">
 
 <a name="machinelearning"></a>
 # Machine Learning Approach
@@ -78,8 +78,7 @@ ________________________________________________________________________________
 # Our Team Page
 
 Our team page contains links to each member's GitHub repository, LinkedIn profile and Twitter account that displays when the user hovers over an avatar.
-<p align="center">
-<img width="614" alt="Our Team" src="https://github.com/OlgaDlzk/What2Watch2Nite/assets/44728723/806815aa-97ef-49a3-b188-3265ff2dee5d">
+<p align="center"> <img width="614" alt="Our Team" src="https://github.com/OlgaDlzk/What2Watch2Nite/assets/44728723/806815aa-97ef-49a3-b188-3265ff2dee5d">
 
 <a name="future"></a> 
 # Future Considerations
