@@ -77,32 +77,23 @@ def process_data():
 # ----------------------------------------------------------------------------------------------------------------
 
 # TV Routes
-@app.route('/tv_shows', methods=['GET'])
+@app.route('/tv_shows', methods=['POST','GET'])
 def tv_shows_page():
     return render_template('tv_shows_2.html', suggestions=get_tv_suggestions())
 
 
 @app.route('/process_data_tv', methods=['POST'])
 def process_data_tv():
-    tv_show = request.form['movie']
+        # movie = request.form['movie']
+    obj = json.loads(request.data.decode('utf-8'))
+    print(obj['show'])    
+    show = obj['show']
 
     # Call machineLearning.py passing the movie name
-    result = tv_machineLearning.process_tv(tv_show)
+    result = tv_machineLearning.process_tv_shows(show)
 
-    # Convert the result to JSON and return it
-    return jsonify(result)
-
-
-@app.route('/tv_recommendations', methods=['POST','GET'])
-def tv_recommendations_page():
-    if request.method == 'POST':
-        tv_show_name = request.form['tv_show_name']
-        print(tv_show_name)
-        #return redirect(url_for('movie_recommendations_page', movie_name=movie_name))
-        return render_template('tv_recommendations.html', tv_show_name=tv_show_name)
-    else:
-        return render_template('tv_shows_2.html')    
-    
+    return result
+ 
 
 # -----------------------------------------------------------------------------------------------------------    
 
