@@ -63,7 +63,7 @@ The item-based movie machine learning model is a recommendation system that util
 
 In the item-based approach, the model calculates the similarity between movies based on their TF-IDF vector representations. This similarity is used to generate recommendations. When a user expresses their preferences or watches certain movies, the model identifies similar movies based on their TF-IDF vectors and suggests them to the user. By combining TF-IDF vectorization and stemming, the model can effectively capture the unique features of each movie and provide personalized recommendations based on the user's interests and the similarities between movies. This approach helps enhance the accuracy and relevance of movie recommendations, improving the overall user experience.
 
-INSERT SCREENSHOT
+<p align="center"> <img width="612" alt="movies engine screenshot" src="https://raw.githubusercontent.com/OlgaDlzk/What2Watch2Nite/main/static/design/img/movies_eng_screenshot.jpg">
 
 __________________________________________________________________________________
 
