@@ -53,10 +53,18 @@ def process_data():
     movie = request.form['movie']
 
     # Call machineLearning.py passing the movie name
-    result = movies_machineLearning.process_movie(movie)
+    result = movies_machineLearning.process_movie(movie) 
 
+    
     # Convert the result to JSON and return it
     return jsonify(result)
+
+
+
+
+
+
+
 
 # pass test data from an input field in movies_2.html into a python file named insert_name_here.py using flask. have the python file insert_name_here.py pass the data into a new html file named movie recommendations.html
 @app.route('/movie_recommendations', methods=['POST','GET'])
