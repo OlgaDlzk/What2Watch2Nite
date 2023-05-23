@@ -7,7 +7,6 @@ import pandas as pd
 from flask import Flask, render_template, request, jsonify, redirect
 import pickle
 from sklearn.metrics.pairwise import cosine_similarity
-from flask_pymongo import PyMongo
 import json
 
 #Import Machine Learning file
@@ -16,17 +15,13 @@ from other_python_files import tv_machineLearning
 
 app = Flask(__name__)
 
-app.config["MONGO_URI"] = "mongodb://localhost:27017/movies_db"
-mongo = PyMongo(app)
-predictions_movies = mongo.db.predictions_movies
+# # the model
+# file = open('static/etl/pkl/tfidf.pkl', 'rb')
+# # the matrix
+# file_2 = open('static/etl/pkl/tfidf_matrix.pkl', 'rb')
 
-# the model
-file = open('static/etl/pkl/tfidf.pkl', 'rb')
-# the matrix
-file_2 = open('static/etl/pkl/tfidf_matrix.pkl', 'rb')
-
-model = pickle.load(file)
-matrix = pickle.load(file_2)
+# model = pickle.load(file)
+# matrix = pickle.load(file_2)
                     
 
 # autocomplete suggestions for search bar - movies
@@ -77,28 +72,9 @@ def process_data():
     # Call machineLearning.py passing the movie name
     result = movies_machineLearning.process_movie(movie)
 
-    # predictions_movies.insert_many({}, result)
-
-    # Convert the result to JSON and return it
-    # redirect('/movies')
     return result
 
-# pass test data from an input field in movies_2.html into a python file named insert_name_here.py using flask. have the python file insert_name_here.py pass the data into a new html file named movie recommendations.html
-@app.route('/movie_recommendations', methods=['POST','GET'])
-def movie_recommendations_page():
-    if request.method == 'POST':
-        movie_name = request.form['movie_name']
-        print(movie_name)
-        #return redirect(url_for('movie_recommendations_page', movie_name=movie_name))
-        return render_template('movie_recommendations.html', movie_name=movie_name)
-    else:
-        return render_template('movie_2.html')
-
-
-
 # ----------------------------------------------------------------------------------------------------------------
-
-
 
 # TV Routes
 @app.route('/tv_shows', methods=['GET'])
@@ -125,16 +101,10 @@ def tv_recommendations_page():
         #return redirect(url_for('movie_recommendations_page', movie_name=movie_name))
         return render_template('tv_recommendations.html', tv_show_name=tv_show_name)
     else:
-        return render_template('tv_shows_2.html')
-
-
-
-
+        return render_template('tv_shows_2.html')    
     
-        
 
-
-
+# -----------------------------------------------------------------------------------------------------------    
 
 if __name__ == '__main__':
     app.run(debug=True)
