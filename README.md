@@ -1,7 +1,9 @@
-# What2Watch2Nite
-Movies/TV Series Recommendation System
+<h1 align="center"> #What2Watch2Nite </h1> 
+<h3 align="center"> Movies/TV Series Recommendation System </h3> 
 
-![istockphoto-1312418309-170667a copy](https://github.com/OlgaDlzk/What2Watch2Nite/assets/44728723/e9781802-ee01-4207-8713-f26bce4727a9)
+<p align="center">
+  <img src="https://github-production-user-asset-6210df.s3.amazonaws.com/44728723/238146270-e9781802-ee01-4207-8713-f26bce4727a9.jpeg" alt="image"/>
+</p>
 
 ## Table of Contents
 1. [Motivation](#motivation)
