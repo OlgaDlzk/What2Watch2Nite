@@ -27,8 +27,9 @@ With so many viewing and entertainment choices, it can be difficult and frustrat
 
 ## Web Application Overview
 
-- We deployed Flask as the web server to host the page routes and XXXX
-- The web application navigation contains links to 4 webpages (Project Overview, Movies, TV Shows and Our Team) and a link to this GitHub repository. 
+- We deployed Flask as the web server to host the page routes and pass the data through the gateway to their designated machine learning files and back on to their respective pages to be displayed.
+- We have two file for machine learning to increase speed and effectiveness of the web application since the algorithms will either only have to contend with the data in the tv show dataset or the movie dataset instead of navigating through all the data.
+- The web application navigation contains links to 5 webpages (Project Overview, Movies, TV Shows, Our tableau data, and Our Team) and a link to this GitHub repository. 
 - To see the live version of the website application, download the source code and launch the Flask app.py file.  The web app is also hosted on render.com through the following link (UPDATE LINK):  [What2Watch2Nite](https://grape-choice.onrender.com/)
 
 
@@ -61,5 +62,5 @@ Our team page contains links to each member's GitHub repository, LinkedIn profil
 
 ## Future Considerations
 In the future, we could expand upon this web application by:
-- XXXXXX
-- XXXXX
+- Add video data like trailers to be presented along with the selected suggestions.
+- Include local spots or media streaming sites where the suggestions could be found.
