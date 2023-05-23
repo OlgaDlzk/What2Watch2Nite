@@ -59,8 +59,10 @@ ________________________________________________________________________________
 <a name="movies"></a>
 ## Movies
 
-- text
-- text
+The item-based movie machine learning model is a recommendation system that utilizes the TF-IDF vectorizer and stemming techniques. It aims to provide personalized movie recommendations to users based on their preferences and similarities between movies. For this particular model we used the following parameters: genres, overview, keywords, cast and original language. TF-IDF (Term Frequency-Inverse Document Frequency) is a numerical representation technique that assigns weights to words in a document based on their frequency and importance. Additionally, stemming is a text normalization technique that reduces words to their root or base form. By applying stemming, variations of words with the same meaning are grouped together, improving the model's ability to identify similarities between movies.
+
+In the item-based approach, the model calculates the similarity between movies based on their TF-IDF vector representations. This similarity is used to generate recommendations. When a user expresses their preferences or watches certain movies, the model identifies similar movies based on their TF-IDF vectors and suggests them to the user. By combining TF-IDF vectorization and stemming, the model can effectively capture the unique features of each movie and provide personalized recommendations based on the user's interests and the similarities between movies. This approach helps enhance the accuracy and relevance of movie recommendations, improving the overall user experience.
+
 INSERT SCREENSHOT
 
 __________________________________________________________________________________
