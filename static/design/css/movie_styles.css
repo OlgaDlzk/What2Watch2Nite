@@ -322,3 +322,44 @@ h6 {
 	display: none;
 	color: white;
 }
+
+
+.grid-item {
+	position: relative;
+	text-align: center;
+  }
+  
+  .grid-item .image-overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: rgba(0, 0, 0, 0.8);
+	color: #fff;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	opacity: 0;
+	transition: opacity 0.3s ease;
+	cursor: pointer;
+  }
+  
+  .grid-item:hover .image-overlay {
+	opacity: 1;
+  }
+  
+  .poster-title {
+	font-size: 30px;
+	font-weight: bold;
+	color: #fff;
+	margin-top: 10px;
+	text-align: center;
+  }
+
+  .grid-container {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr); 
+	grid-gap: 20px; 
+  }
+
