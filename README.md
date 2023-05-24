@@ -22,14 +22,15 @@
 With so many viewing and entertainment choices, it can be difficult and frustrating to select which movie or TV show to watch. In our research, we found that the vast majority of viewing recommendation engines were for movies, with very few focused on TV Shows. So we set out to build a recommendation system for movies AND television shows to make it easier for our users to choose **"What2Watch2Nite"**.
 
 ## Tools:
-Flask
-Pickle 
-Pandas
-Matplotlib
-HTML/CSS/JavaScript
-Bootstrap
-Font-Awesome
-Tableau
+    Flask
+    Pickle 
+    Pandas
+    Matplotlib
+    Scikit-Learn
+    HTML/CSS/JavaScript
+    Bootstrap
+    Font-Awesome
+    Tableau
 
 
 <a name="datadesc"></a>
