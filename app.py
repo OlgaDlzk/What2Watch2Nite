@@ -44,7 +44,9 @@ def home_page():
 def ourTeam():
     return render_template('our_team.html')
 
-
+@app.route("/tableau", methods=['GET'])
+def tableauViz():
+    return render_template('tableau.html')
 
 # ----------------------------------------------------------------------------------------------
 
