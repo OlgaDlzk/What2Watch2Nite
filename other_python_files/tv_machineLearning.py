@@ -11,13 +11,13 @@ file_3 = open('static/etl/pkl/combined_vectors_final.pkl', 'rb')
 
 matrix = pickle.load(file_3)
 
-def process_tv_shows(shows):
+def process_tv_shows(show):
     # Perform machine learning operations
     # Process the tv show name and generate the results
-    shows = pd.read_csv('static/etl/csv/tv_shows_final.csv')
+    shows_df = pd.read_csv('static/etl/csv/tv_shows_final.csv')
 
     # Get the index of the tv show that matches the title/name
-    idx = shows.index[shows['name'].str.lower() == show.lower()][0]
+    idx = shows_df.index[shows_df['name'].str.lower() == show.lower()][0]
 
     # Get the pairwsie similarity scores of all tv shows with the input tv show
     sim_scores = list(enumerate(
@@ -35,7 +35,7 @@ def process_tv_shows(shows):
     show_indices = [i[0] for i in sim_scores]    
 
     # Return the top 6 most similar tv shows
-    result = shows.iloc[show_indices]
+    result = shows_df.iloc[show_indices]
 
     result_json = result.to_json(orient='records')
 
@@ -44,11 +44,11 @@ def process_tv_shows(shows):
     # print(len(data))
     # print(data[0]['poster_path'])
     shows_data = []
-    for m in data:
+    for s in data:
         dic = {}
-        dic['name'] = m['name']
-        dic['overview'] = m['overview']
-        dic['poster_path'] = 'https://www.themoviedb.org/t/p/w600_and_h900_bestv2/'+m['poster_path']
+        dic['name'] = s['name']
+        dic['overview'] = s['overview']
+        dic['poster_path'] = 'https://www.themoviedb.org/t/p/w600_and_h900_bestv2/'+s['poster_path']
         shows_data.append(dic)
     # print(shows_data)
 

@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-  <title>Movie Recommendation System</title>
+  <title>Tv Shows Recommendation System</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -13,15 +14,18 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
   <!-- Bootstrap -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
   <!-- Auto Complete -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tarekraafat/autocomplete.js@7.2.0/dist/css/autoComplete.min.css">
+  <link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/@tarekraafat/autocomplete.js@7.2.0/dist/css/autoComplete.min.css">
   <!-- CSS stylesheet -->
   <link rel="stylesheet" type="text/css" href="../static/design/css/movie_styles.css" media="screen">
 
+
   <script type="text/javascript">
-    var films = {{suggestions|tojson}};
+    var films = {{ suggestions| tojson}};
   </script>
 
 </head>
@@ -33,19 +37,18 @@
     <li><a href="/movies">MOVIES</a></li>
     <li><a href="/tv_shows">TV SHOWS</a></li>
     <li><a href="/our_team">OUR TEAM</a></li>
-    <li><a href="https://github.com/OlgaDlzk/What2Watch2Nite/tree/main">GITHUB REPO</a></li>
+    <li><a href="https://github.com/OlgaDlzk/What2Watch2Nite/tree/main" target="_blank">GITHUB REPO</a></li>
   </ul>
 </nav>
 
-<body 
-  <div class="background-image">
-    <header>
-      <img src="../static/design/img/tv_logo_2.png" alt="Logo">
-    </header>
-    <div class="ml-container" style="display: block;">
-      <a href="https://github.com/OlgaDlzk/What2Watch2Nite" target="_blank" class="github-corner" title="View source on GitHub">
-            <svg data-toggle="tooltip"
-            data-placement="left" width="80" height="80" viewBox="0 0 250 250"
+<body <div class="background-image">
+  <header>
+    <img src="../static/design/img/tv_logo_2.png" alt="Logo">
+  </header>
+  <div class="ml-container" style="display: block;">
+    <a href="https://github.com/OlgaDlzk/What2Watch2Nite" target="_blank" class="github-corner"
+      title="View source on GitHub">
+      <svg data-toggle="tooltip" data-placement="left" width="80" height="80" viewBox="0 0 250 250"
         style="fill:#3457f1; color:#fff; position: fixed;z-index:100; top: 0; border: 0; right: 0;" aria-hidden="true">
         <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
         <path
@@ -54,73 +57,104 @@
         <path
           d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
           fill="currentColor" class="octo-body"></path>
-            </svg>
-          </a>
-      <center><h1> What2Watch2Nite<h1></center>
-      <center><h2> TV Show Recommendation Engine</h2></center>
-<!-- AR's Mess
-      <div class="form-group shadow-textarea" style="margin-top: 10px;text-align: center;color: white;">
-          <input type="text" name="movie" class="movie form-control" id="autoComplete" autocomplete="off" 
-          placeholder="Enter a TV Show " style="background-color: #ffffff;border-color:#3457f1;width: 60%;color: #181818" required="required" />
-          <br>
-      </div>
-  </div>
+      </svg>
+    </a>
+    <center>
+      <h1> What2Watch2Nite<h1>
+    </center>
+    <center>
+      <h2> TV Shows Recommendation Engine</h2>
+    </center>
 
+    <script>
 
-    <div class="form-group" style="text-align: center;">
-      <button class="btn btn-primary btn-block movie-button" style="background-color: #3457f1;text-align: center;border-color: #3457f1;width:120px;" disabled="true" >Enter</button><br><br>
-    </div>
-	</div>
--->
+      function process_response(res) {
+        console.log(res['shows']);
+        console.log(res['num']);
 
-  <form method="POST" action="/process_data_tv">
+        var gridContainer = document.getElementById("grid-container");
+
+        // Clear any existing grid items
+        gridContainer.innerHTML = "";
+
+        for (let i = 0; i < res['num']; i++) {
+          var gridItem = document.createElement("div");
+          gridItem.className = "grid-item";
+
+          var img = document.createElement("img");
+          img.src = 'https://image.tmdb.org/t/p/w500/' + res['shows'][i]['poster_path'];
+          img.alt = "Image " + (i + 1);
+          img.className = "poster-image";
+
+          var title = document.createElement("p");
+          title.className = "poster-title";
+          title.textContent = res['shows'][i]['name'];
+
+          var imageOverlay = document.createElement("div");
+          imageOverlay.className = "image-overlay";
+          imageOverlay.textContent = res['shows'][i]['overview'];
+
+          gridItem.appendChild(title);
+          gridItem.appendChild(img);
+          gridItem.appendChild(imageOverlay);
+
+          gridContainer.appendChild(gridItem);
+        }
+      }
+      function fun() {
+        let text_data = document.getElementById("autoComplete").value;
+        fetch('/process_data_tv', {
+          method: 'POST',
+          headers: {
+            'Accept': 'application.json',
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ show: text_data }),
+          cache: 'default'
+        }).then(res => res.json())
+          .then(res => { process_response(res) });
+        //   alert(text_data);  
+      }  
+    </script>
+
+    <!-- <form method="POST" action="/process_data_movies"> -->
     <div class="form-group shadow-textarea" style="margin-top: 10px;text-align: center;color: white;">
-        <input 
-          type="text" 
-          name="movie" 
-          class="movie form-control" 
-          id="autoComplete" 
-          autocomplete="off" 
-          placeholder="Enter a TV Show" 
-          style="background-color: #ffffff;border-color:#3457f1;width: 60%;color: #181818" 
-          required="required" />
-        <br>
+      <input type="text" name="movie" class="movie form-control" id="autoComplete" autocomplete="off"
+        placeholder="Enter a Movie Name"
+        style="background-color: #ffffff;border-color:#3457f1;width: 60%;color: #181818" required="required" />
+      <br>
     </div>
-    <div class="form-group" style="text-align: center;">
+    <!-- <div class="form-group" style="text-align: center;">
         <button class="btn btn-primary btn-block movie-button" style="background-color: #3457f1;text-align: center;border-color: #3457f1;width:120px;">Enter</button>
         <br><br>
+    </div> -->
+    <!-- </form> -->
+
+    <div class="form-group" style="text-align: center;">
+      <button onclick="fun()" class="btn btn-primary btn-block movie-button"
+        style="background-color: #3457f1;text-align: center;border-color: #3457f1;width:120px;">Enter</button>
+      <br><br>
     </div>
-</form>
 
+    <div id="grid-container" class="grid-container">
+      <!-- Grid items will be dynamically added here -->
+    </div>
 
+    <div class="fail">
+      <center>
+        <h3>Sorry! The movie you requested is not in our database.
+          Please check the spelling or try with other movies!</h3>
+      </center>
+    </div>
 
-<!-- AR's End of Mess -->
+    <script src="https://cdn.jsdelivr.net/npm/@tarekraafat/autocomplete.js@7.2.0/dist/js/autoComplete.min.js"></script>
+    <script type="text/javascript" src="../static/etl/js/autocomplete.js"></script>
 
-  <div id="loader" class="text-center">
-  </div>
-  
-  <div class="fail">
-    <center><h3>Sorry! The TV Show you requested is not in our database. 
-    Please check the spelling or try with other TV Shows!</h3></center>
-  </div>
+    <!-- Footer -->
+    <footer class="footer" style="text-align: center;">
+      <span class="bottom">&copy; Copyright The-Data-Machines 2023</span>
+    </footer>
 
-	<div class="results">
-    <center>
-      <h2 id="name" class="text-uppercase"></h2>
-    </center>
-	</div>
-	
-	
-	<script src="https://cdn.jsdelivr.net/npm/@tarekraafat/autocomplete.js@7.2.0/dist/js/autoComplete.min.js"></script>
-  <script type="text/javascript" src="../static/etl/js/autocomplete.js"></script>
-
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script type="text/javascript" src="{{url_for('static', filename='recommend.js')}}"></script>
-
-  <!-- Footer -->
-  <footer class="footer" style="text-align: center;">
-    <span class="bottom">&copy; Copyright The-Data-Machines 2023</span>
-  </footer>
-  
 </body>
+
 </html>

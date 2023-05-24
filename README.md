@@ -1,5 +1,5 @@
 <h1 align="center"> #What2Watch2Nite </h1> 
-<h3 align="center"> Movies/TV Series Recommendation System </h3> 
+<h3 align="center"> Movies/TV Shows Recommendation System </h3> 
 
 <p align="center">
   <img src="https://github-production-user-asset-6210df.s3.amazonaws.com/44728723/238146270-e9781802-ee01-4207-8713-f26bce4727a9.jpeg" alt="image"/>
@@ -19,9 +19,18 @@
 
 <a name="motivation"></a>
 # Motivation
-For Project 4, we were asked to analyze, vizualize and/or solve a problem with Machine Learning using Scikit-learn and two of the following technologies: Python Pandas, Python Matplotlib, HTML, CSS, Bootstrap, SQL or MongoDB database, Google Cloud SQL, Amazon AWS or Tableau. This machine learning model and web application were constructed in 14 days.
-
 With so many viewing and entertainment choices, it can be difficult and frustrating to select which movie or TV show to watch. In our research, we found that the vast majority of viewing recommendation engines were for movies, with very few focused on TV Shows. So we set out to build a recommendation system for movies AND television shows to make it easier for our users to choose **"What2Watch2Nite"**.
+
+## Tools:
+Flask
+Pickle 
+Pandas
+Matplotlib
+HTML/CSS/JavaScript
+Bootstrap
+Font-Awesome
+Tableau
+
 
 <a name="datadesc"></a>
 # Data Description
