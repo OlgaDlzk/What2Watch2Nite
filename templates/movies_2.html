@@ -84,6 +84,8 @@
           var img = document.createElement("img");
           img.src = 'https://image.tmdb.org/t/p/w500/' + res['movies'][i]['poster_path'];
           img.alt = "Image " + (i + 1);
+          img.className = "poster-image";
+
 
           var title = document.createElement("p");
           title.className = "poster-title";

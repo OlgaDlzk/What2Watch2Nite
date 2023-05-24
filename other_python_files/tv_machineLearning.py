@@ -48,7 +48,7 @@ def process_tv_shows(show):
         dic = {}
         dic['name'] = s['name']
         dic['overview'] = s['overview']
-        # dic['poster_path'] = 'https://www.themoviedb.org/t/p/w600_and_h900_bestv2/'+s['poster_path']
+        dic['poster_path'] = 'https://www.themoviedb.org/t/p/w600_and_h900_bestv2/'+s['poster_path']
         shows_data.append(dic)
     # print(shows_data)
 
