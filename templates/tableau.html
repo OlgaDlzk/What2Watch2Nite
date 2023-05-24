@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Movie Recommendation System</title>
+  <title>Tableau Visuals</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -20,11 +20,11 @@
   <!-- CSS stylesheet -->
   <link rel="stylesheet" type="text/css" href="../static/design/css/movie_styles.css" media="screen">
 
-  <script type="text/javascript">
-    var films = {{suggestions|tojson}};
-  </script>
 
 </head>
+
+
+
 
 <!-- Start of Navigation -->
 <nav>
@@ -37,7 +37,7 @@
   </ul>
 </nav>
 
-<body 
+<body> 
   <div class="background-image">
     <header>
       <img src="../static/design/img/tv_logo_2.png" alt="Logo">
@@ -56,71 +56,19 @@
           fill="currentColor" class="octo-body"></path>
             </svg>
           </a>
-      <center><h1> What2Watch2Nite<h1></center>
-      <center><h2> TV Show Recommendation Engine</h2></center>
-<!-- AR's Mess
-      <div class="form-group shadow-textarea" style="margin-top: 10px;text-align: center;color: white;">
-          <input type="text" name="movie" class="movie form-control" id="autoComplete" autocomplete="off" 
-          placeholder="Enter a TV Show " style="background-color: #ffffff;border-color:#3457f1;width: 60%;color: #181818" required="required" />
-          <br>
-      </div>
-  </div>
+        <center><h1> What2Watch2Nite<h1></center>
 
 
-    <div class="form-group" style="text-align: center;">
-      <button class="btn btn-primary btn-block movie-button" style="background-color: #3457f1;text-align: center;border-color: #3457f1;width:120px;" disabled="true" >Enter</button><br><br>
-    </div>
-	</div>
--->
-
-  <form method="POST" action="/process_data_tv">
-    <div class="form-group shadow-textarea" style="margin-top: 10px;text-align: center;color: white;">
-        <input 
-          type="text" 
-          name="movie" 
-          class="movie form-control" 
-          id="autoComplete" 
-          autocomplete="off" 
-          placeholder="Enter a TV Show" 
-          style="background-color: #ffffff;border-color:#3457f1;width: 60%;color: #181818" 
-          required="required" />
-        <br>
-    </div>
-    <div class="form-group" style="text-align: center;">
-        <button class="btn btn-primary btn-block movie-button" style="background-color: #3457f1;text-align: center;border-color: #3457f1;width:120px;">Enter</button>
-        <br><br>
-    </div>
-</form>
-
-
-
-<!-- AR's End of Mess -->
-
-  <div id="loader" class="text-center">
-  </div>
-  
-  <div class="fail">
-    <center><h3>Sorry! The TV Show you requested is not in our database. 
-    Please check the spelling or try with other TV Shows!</h3></center>
-  </div>
-
-	<div class="results">
-    <center>
-      <h2 id="name" class="text-uppercase"></h2>
-    </center>
-	</div>
-	
-	
-	<script src="https://cdn.jsdelivr.net/npm/@tarekraafat/autocomplete.js@7.2.0/dist/js/autoComplete.min.js"></script>
-  <script type="text/javascript" src="../static/etl/js/autocomplete.js"></script>
-
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script type="text/javascript" src="{{url_for('static', filename='recommend.js')}}"></script>
+        <center>
+        <section class="content-section" id="Tableau">
+            <h2 class="mb-5">Tableau Visuals</h2>
+            <div class='tableauPlaceholder' id='viz1684802301013' style='position: relative'><noscript><a href='#'><img alt='Statistical Overview ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Wh&#47;What2Watch2Nite-StatisticalOverview&#47;StatisticalOverview&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='What2Watch2Nite-StatisticalOverview&#47;StatisticalOverview' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Wh&#47;What2Watch2Nite-StatisticalOverview&#47;StatisticalOverview&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1684802301013');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='1600px';vizElement.style.height='927px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>        
+        </center>
 
   <!-- Footer -->
   <footer class="footer" style="text-align: center;">
     <span class="bottom">&copy; Copyright The-Data-Machines 2023</span>
   </footer>
-  
+
 </body>
 </html>
