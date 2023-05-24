@@ -37,8 +37,9 @@
     <li><a href="/movies">MOVIES</a></li>
     <li><a href="/tv_shows">TV SHOWS</a></li>
     <li><a href="/our_team">OUR TEAM</a></li>
-    <li><a href="https://github.com/OlgaDlzk/What2Watch2Nite/tree/main">GITHUB REPO</a></li>
-  </ul>
+      <li><a href="/our_team">OUR TEAM</a></li>
+      <li><a href="/tableau">TABLEAU</a></li>
+    </ul>
 </nav>
 
 <body <div class="background-image">
@@ -84,6 +85,8 @@
           var img = document.createElement("img");
           img.src = 'https://image.tmdb.org/t/p/w500/' + res['movies'][i]['poster_path'];
           img.alt = "Image " + (i + 1);
+          img.className = "poster-image";
+
 
           var title = document.createElement("p");
           title.className = "poster-title";

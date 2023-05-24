@@ -1,34 +1,37 @@
 /* Nav Bar Options */
 nav {
-    background-color: #171597;
-    align-items: center;
+	background-color: #171597;
+	align-items: center;
 	padding-top: 10px;
 	padding-bottom: 10px;
-  }
-  
-  ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    align-items: center;
+}
+
+ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	align-items: center;
 	font-size: 16px;
-    
-  }
 
-  li {
-    display: inline-block;
-    margin: 0 10px;
-  }
-  
-  a {
-    color: #fff;
-    text-decoration: none;
-  }
+}
 
-  a:hover {
-    color: #b8b7b7; 
-    text-decoration: none; /* Remove the underline on the hover */
-  }
+li {
+	display: inline-block;
+	margin: 0 10px;
+}
+
+a {
+	color: #fff;
+	text-decoration: none;
+}
+
+a:hover {
+	color: #b8b7b7;
+	text-decoration: none;
+	/* Remove the underline on the hover */
+}
+
+
 
 .movie {
 	color: #fff;
@@ -40,14 +43,14 @@ nav {
 .movie-content {
 	display: flex;
 	flex-wrap: wrap;
-	justify-content:space-around;
+	justify-content: space-around;
 }
 
-.movie-content > div {
-    margin:20px;
+.movie-content>div {
+	margin: 20px;
 }
 
-.btn-block{
+.btn-block {
 	width: 15%;
 	text-align: center;
 	margin-left: auto;
@@ -56,20 +59,22 @@ nav {
 }
 
 .background-image {
-    background-image: url("../img/reco_bkgrnd_photo_2.jpg");
+	background-image: url("../img/reco_bkgrnd_photo_2.jpg");
 	background-color: #181818;
-    background-position: center;
-    height: 50000%;
+	background-position: center;
+	height: 50000%;
 }
 
 /* Logo overlay on top of  Background Image */
 header img:last-of-type {
-    height: 150px;
-    width: 225px;
-    position: absolute; /* Set the logo element as absolute positioned */
-    top: 75px; /* Adjust top, right, bottom, left values as needed to position the logo */
-    left: 100px;
-  }
+	height: 150px;
+	width: 225px;
+	position: absolute;
+	/* Set the logo element as absolute positioned */
+	top: 75px;
+	/* Adjust top, right, bottom, left values as needed to position the logo */
+	left: 100px;
+}
 
 #content {
 
@@ -97,56 +102,57 @@ footer {
 	bottom: 0;
 	width: 100%;
 	padding-top: 15px;
-  
-  }
+
+}
 
 h1 {
-    font-family: 'Netflix Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    color: white;
-    font-weight: bold;
-    margin-top: 50px;
+	font-family: 'Netflix Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	color: white;
+	font-weight: bold;
+	margin-top: 50px;
 	font-size: 52px;
-    /* text-shadow: #000000 0px 0px 13px; */
- }
+	/* text-shadow: #000000 0px 0px 13px; */
+}
 
- h2 {
-    font-family: 'Netflix Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    color: #3457f1;
-    font-weight: bold;
-    /* margin-top: 5px; */
-    text-shadow: #000000 0px 0px 13px;
- }
+h2 {
+	font-family: 'Netflix Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	color: #3457f1;
+	font-weight: bold;
+	/* margin-top: 5px; */
+	text-shadow: #000000 0px 0px 13px;
+}
 
- .btn-primary btn-block movie-button {
-    
-    color: #3457f1;
-    background-color: #3457f1;
+.btn-primary btn-block movie-button {
+
+	color: #3457f1;
+	background-color: #3457f1;
 	border-color: #3457f1;
- }
+}
 
 .github-corner:hover .octo-arm {
-  	animation: octocat-wave 560ms ease-in-out;
+	animation: octocat-wave 560ms ease-in-out;
 }
 
 @keyframes octocat-wave {
-  0%,
-  100% {
-    transform: rotate(0)
-  }
 
-  20%,
-  60% {
-    transform: rotate(-25deg)
-  }
+	0%,
+	100% {
+		transform: rotate(0)
+	}
 
-  40%,
-  80% {
-    transform: rotate(10deg)
-  }
+	20%,
+	60% {
+		transform: rotate(-25deg)
+	}
+
+	40%,
+	80% {
+		transform: rotate(10deg)
+	}
 }
 
 #autoComplete {
-  background-position: 98% ;
+	background-position: 98%;
 }
 
 #name {
@@ -155,25 +161,28 @@ h1 {
 }
 
 h6 {
-    margin-bottom: 20px;  
+	margin-bottom: 20px;
 }
 
 @media only screen and (max-width: 650px) {
-    #mcontent {
-      display: block;
-    }
-    .poster-lg {
-      display: none;
-    }
-    #details {
+	#mcontent {
+		display: block;
+	}
+
+	.poster-lg {
+		display: none;
+	}
+
+	#details {
 		margin-left: 30px;
 	}
-    #loader {
+
+	#loader {
 		display: none;
 		position: fixed;
 		z-index: 100;
 		left: 0;
-		top:0;
+		top: 0;
 		width: 100%;
 		height: 100%;
 		background-image: url("../img/reco_bkgrnd_image.jpg");
@@ -187,13 +196,13 @@ h6 {
 
 	#loader-text {
 		vertical-align: middle;
-		color:white;
+		color: white;
 	}
 
 	#autoComplete {
-	  background-position: 97% ;
+		background-position: 97%;
 	}
-	
+
 	svg[data-toggle=tooltip] {
 		width: 50px;
 		height: 50px;
@@ -201,9 +210,10 @@ h6 {
 }
 
 @media only screen and (max-width: 991px) {
-	.modal-body{
+	.modal-body {
 		display: block;
 	}
+
 	.profile-pic {
 		margin-left: auto;
 		margin-right: auto;
@@ -211,6 +221,7 @@ h6 {
 		margin-bottom: 20px;
 	}
 }
+
 @media only screen and (min-width: 992px) {
 	.modal-body {
 		display: flex;
@@ -218,9 +229,9 @@ h6 {
 }
 
 @media only screen and (min-width: 651px) {
-  .poster-sm {
-    display: none;
-   }
+	.poster-sm {
+		display: none;
+	}
 
 	#mcontent {
 		display: flex;
@@ -232,7 +243,7 @@ h6 {
 		position: fixed;
 		z-index: 100;
 		left: 0;
-		top:0;
+		top: 0;
 		width: 100%;
 		height: 100%;
 		background-image: url("../img/reco_bkgrnd_image.jpg");
@@ -246,15 +257,15 @@ h6 {
 
 	#loader-text {
 		vertical-align: middle;
-		color:white;
+		color: white;
 	}
 
 }
 
-.poster{
-    -webkit-box-shadow: 0px 1px 15px 4px rgba(250,250,250,1);
-    -moz-box-shadow: 0px 1px 15px 4px rgba(250,250,250,1);
-    box-shadow: 0px 1px 15px 4px rgba(250,250,250,1);
+.poster {
+	-webkit-box-shadow: 0px 1px 15px 4px rgba(250, 250, 250, 1);
+	-moz-box-shadow: 0px 1px 15px 4px rgba(250, 250, 250, 1);
+	box-shadow: 0px 1px 15px 4px rgba(250, 250, 250, 1);
 }
 
 .card:hover {
@@ -262,13 +273,13 @@ h6 {
 }
 
 .castcard:hover {
-    cursor: pointer;
+	cursor: pointer;
 }
 
 .cast-img {
 	filter: brightness(100%);
 	-moz-transition: all 0.75s ease;
-    -webkit-transition: all 0.75s ease;
+	-webkit-transition: all 0.75s ease;
 	transition: all 0.75s ease;
 }
 
@@ -276,8 +287,8 @@ h6 {
 .cast-img:hover {
 	filter: brightness(50%);
 	-moz-transition: all 0.75s ease;
-    -webkit-transition: all 0.75s ease;
-    transition: all 0.75s ease;
+	-webkit-transition: all 0.75s ease;
+	transition: all 0.75s ease;
 }
 
 .fig {
@@ -292,16 +303,16 @@ h6 {
 	left: 0px;
 	opacity: 0;
 	-moz-transition: all 0.75s ease;
-    -webkit-transition: all 0.75s ease;
-    transition: all 0.75s ease;
+	-webkit-transition: all 0.75s ease;
+	transition: all 0.75s ease;
 }
 
 .fig:hover {
 	opacity: 1;
-	backdrop-filter:br;
+	backdrop-filter: br;
 	-moz-transition: all 0.75s ease;
-    -webkit-transition: all 0.75s ease;
-    transition: all 0.75s ease;
+	-webkit-transition: all 0.75s ease;
+	transition: all 0.75s ease;
 }
 
 .card-btn {
@@ -313,9 +324,9 @@ h6 {
 }
 
 .table td {
-    border-color: white;
-    border-style:solid; 
-    border-width:1px;
+	border-color: white;
+	border-style: solid;
+	border-width: 1px;
 }
 
 .fail {
@@ -327,9 +338,9 @@ h6 {
 .grid-item {
 	position: relative;
 	text-align: center;
-  }
-  
-  .grid-item .image-overlay {
+}
+
+.grid-item .image-overlay {
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -343,23 +354,27 @@ h6 {
 	opacity: 0;
 	transition: opacity 0.3s ease;
 	cursor: pointer;
-  }
-  
-  .grid-item:hover .image-overlay {
+}
+
+.grid-item:hover .image-overlay {
 	opacity: 1;
-  }
-  
-  .poster-title {
+}
+
+.poster-title {
 	font-size: 30px;
 	font-weight: bold;
 	color: #fff;
 	margin-top: 10px;
 	text-align: center;
-  }
+}
 
-  .grid-container {
+.grid-container {
 	display: grid;
-	grid-template-columns: repeat(3, 1fr); 
-	grid-gap: 20px; 
-  }
+	grid-template-columns: repeat(3, 1fr);
+	grid-gap: 20px;
+}
 
+.poster-image {
+	max-width: 90%;
+	height: auto;
+}
