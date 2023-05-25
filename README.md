@@ -50,20 +50,20 @@ With so many viewing and entertainment choices, it can be difficult and frustrat
 
 - We deployed Machine Learning using Scikit-learn's K-Nearest Neighbors algorithm with cosine similarity as the metric parameter.
 - We tested two approaches to the NLP when transforming the text features into vectors: CountVectorizer and TF-IDF Vectorizer. We found that TF-IDF performed better than the Count Vectorizer as it considers the importance of a word along with its frequency while Count Vectorizer relys soley on frequency count. 
-- We also tested Pearson Correlation Coeffecient as a measure of distance for KNN similarity scores and found that this approached produced extremely similar results to the cosine similarity approach.
+- We also tested Pearson Correlation Coeffecient as a measure of distance for KNN similarity scores and found that this approach produced very similar results to the cosine similarity approach.
 
 <a name="webapp"></a>
 # Web Application Overview
 
 - We deployed Flask as the web server to host the page routes and pass the data through the gateway to their designated machine learning files and back on to their respective pages to be displayed.
-- We have two file for machine learning to increase speed and effectiveness of the web application since the algorithms will either only have to contend with the data in the tv show dataset or the movie dataset instead of navigating through all the data.
-- The web application navigation contains links to 5 webpages (Project Overview, Movies, TV Shows, Our tableau data, and Our Team) and a link to this GitHub repository. 
-- To see the live version of the website application, download the source code and launch the Flask app.py file.  The web app is also hosted on render.com through the following link (UPDATE LINK):  [What2Watch2Nite](https://grape-choice.onrender.com/)
+- We have two files for machine learning to increase speed and effectiveness of the web application since the algorithms will either only have to contend with the data in the tv show dataset or the movie dataset instead of navigating through all the data.
+- The web application navigation contains links to 5 webpages (Project Overview, Movies, TV Shows, Our Team, and our Tableau data) and a link to this GitHub repository. 
+- To see the live version of the website application, download the source code and launch the Flask app.py file.  
 
 <a name="project"></a>
 # Project Overview
-
-<p align="center"> <img width="614" alt="index" src="https://github.com/OlgaDlzk/What2Watch2Nite/assets/44728723/63feed96-2b86-4209-b4a0-5ddbfdbc4832">
+  
+<p align="center"> <img width="675" alt="Updated Homescreen" src="https://github.com/OlgaDlzk/What2Watch2Nite/assets/44728723/fc0d20ed-9569-4183-aeb3-5617740737b7">
 __________________________________________________________________________________
  
 <a name="movies"></a>
@@ -80,9 +80,9 @@ ________________________________________________________________________________
 <a name="shows"></a> 
 ## TV Shows
 
-- text
-- text
-INSERT SCREENSHOT
+The TV Show recommendation engine is a content-based filtering or item-based machine learning model. Similar to the Movie Recommendation engine, the TV Show recommendation engine utilizes TF-IDF vectorization and stemming techniques. We used the following attributes to build the vectors for each show: genre, show overview and creator. Cosine similarity was used in the model as the measure of distance between the item vectors.
+
+<p align="center"> <img width="290" alt="TV Show Page" src="https://github.com/OlgaDlzk/What2Watch2Nite/assets/44728723/4bb631da-f4bf-41b1-844a-1db9dfbb79dc">
 
 __________________________________________________________________________________
 
@@ -90,10 +90,11 @@ ________________________________________________________________________________
 # Our Team Page
 
 Our team page contains links to each member's GitHub repository, LinkedIn profile and Twitter account that displays when the user hovers over an avatar.
-<p align="center"> <img width="614" alt="Our Team" src="https://github.com/OlgaDlzk/What2Watch2Nite/assets/44728723/806815aa-97ef-49a3-b188-3265ff2dee5d">
+<p align="center"> <img width="671" alt="Updated Our Team Page" src="https://github.com/OlgaDlzk/What2Watch2Nite/assets/44728723/298eb17b-de73-4850-99d7-aca35b1351da">
+
 
 <a name="future"></a> 
 # Future Considerations
 In the future, we could expand upon this web application by:
 - Add video data like trailers to be presented along with the selected suggestions.
-- Include local spots or media streaming sites where the suggestions could be found.
+- Include local theatres with movie times or streaming sites where the recommendations are playing.
