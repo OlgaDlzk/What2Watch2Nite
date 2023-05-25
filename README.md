@@ -5,6 +5,8 @@
   <img src="https://github-production-user-asset-6210df.s3.amazonaws.com/44728723/238146270-e9781802-ee01-4207-8713-f26bce4727a9.jpeg" alt="image"/>
 </p>
 
+<h3 align="center"> Deployed on Heroku: https://what2watch2nite.herokuapp.com/ </h3> 
+
 ## Table of Contents
 1. [Motivation](#motivation)
 2. [Data Description](#datadesc)
@@ -31,6 +33,7 @@ With so many viewing and entertainment choices, it can be difficult and frustrat
     Bootstrap
     Font-Awesome
     Tableau
+    Heroku
 
 
 <a name="datadesc"></a>
