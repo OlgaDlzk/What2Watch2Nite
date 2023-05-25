@@ -82,7 +82,7 @@ ________________________________________________________________________________
 
 The TV Show recommendation engine is a content-based filtering or item-based machine learning model. Similar to the Movie Recommendation engine, the TV Show recommendation engine utilizes TF-IDF vectorization and stemming techniques. We used the following attributes to build the vectors for each show: genre, show overview and creator. Cosine similarity was used in the model as the measure of distance between the item vectors.
 
-<p align="center"> <img width="290" alt="TV Show Page" src="https://github.com/OlgaDlzk/What2Watch2Nite/assets/44728723/4bb631da-f4bf-41b1-844a-1db9dfbb79dc">
+<p align="center"> <img width="612" alt="TV Show Page" src="https://github.com/OlgaDlzk/What2Watch2Nite/assets/44728723/4bb631da-f4bf-41b1-844a-1db9dfbb79dc">
 
 __________________________________________________________________________________
 
