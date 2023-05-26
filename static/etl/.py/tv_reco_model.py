@@ -15,7 +15,7 @@ import numpy as np
 class DataProcessor:
 
     def load_tv_shows(self, path):
-        df = pd.read_csv(../csv/tv_shows_data_cleaned.csv)
+        df = pd.read_csv('../csv/tv_shows_data_cleaned.csv')
         return df
 
 
